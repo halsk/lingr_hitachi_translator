@@ -12,7 +12,7 @@ get_or_post '/' do
 
   dict = YAML::load File.open('dict.yaml')
   dict['hitachi'].default = ''
-  dict['reinspire'].default = ''
+  dict['reinspired'].default = ''
 
   begin
     json = JSON.parse request.body.string
@@ -23,7 +23,7 @@ get_or_post '/' do
   lines = []
   json['events'].map{ |e|
     msg = dict['hitachi'][e['message']['text']]
-    rmsg = dict['reinspire'][e['message']['text']]
+    rmsg = dict['reinspired'][e['message']['text']]
     lines << msg unless msg.empty?
     lines << rmsg unless rmsg.empty?
   }
