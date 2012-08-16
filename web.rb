@@ -1,5 +1,6 @@
 require 'sinatra'
 
 get '/' do
-    "Hello, world"
+  content_type 'text/plain', :charset => 'utf-8'
+  "Hello, world!"
 end
