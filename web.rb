@@ -7,6 +7,13 @@ def get_or_post(path, opts={}, &block)
   post(path, opts, &block)
 end
 
+def translate(string, dict)
+  dict.each_pair {|key, value|
+    string.gsub! key, value
+  }
+  string
+end
+
 get_or_post '/' do
   content_type 'text/plain', :charset => 'utf-8'
 
@@ -22,10 +29,9 @@ get_or_post '/' do
 
   lines = []
   json['events'].map{ |e|
-    msg = dict['hitachi'][e['message']['text']]
-    rmsg = dict['reinspired'][e['message']['text']]
-    lines << msg unless msg.empty?
-    lines << rmsg unless rmsg.empty?
+    orig = e['message']['text'].dup
+    msg = translate(e['message']['text'], dict['hitachi'].merge(dict['reinspired']))
+    lines << msg if msg != orig
   }
 
   ret = lines.join "\n"
