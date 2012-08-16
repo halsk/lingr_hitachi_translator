@@ -1,0 +1,28 @@
+{"status":"ok",
+   "counter":208,
+   "events":[
+    {"event_id":208,
+     "message":
+      {"id":82,
+       "room":"myroom",
+       "public_session_id":"UBDH84",
+       "icon_url":"http://example.com/myicon.png",
+       "type":"user",
+       "speaker_id":"kenn",
+       "nickname":"Kenn Ejima",
+       "text":"拝承",
+       "timestamp":"2011-02-12T08:13:51Z",
+       "local_id":"pending-UBDH84-1"}},
+    {"event_id":209,
+      "message":
+      {"id":83,
+       "room":"myroom",
+       "public_session_id":"UBDH84",
+       "icon_url":"http://example.com/myicon.png",
+       "type":"user",
+       "speaker_id":"kenn",
+       "nickname":"Kenn Ejima",
+       "text":"ほげほげ",
+       "timestamp":"2011-02-12T08:13:51Z",
+       "local_id":"pending-UBDH84-1"}}]
+}
